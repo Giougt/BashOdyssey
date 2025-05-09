@@ -40,3 +40,12 @@ echo $time1
 echo $date 
 echo $date_oneday
 echo $time_second "seconds since January 1, 1970"
+
+# manipulate date
+New_date=$(date -d "+9 days")
+echo $New_date
+# same but shorter
+date -d "Sat May 09 22:38:45 CEST 2025+9 days"
+# other format result="20250518"
+new_date_value=`date '+%C%y%m%d' -d "$end_date+9 days"`
+echo $new_date_value
