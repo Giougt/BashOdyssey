@@ -49,3 +49,28 @@ date -d "Sat May 09 22:38:45 CEST 2025+9 days"
 # other format result="20250518"
 new_date_value=`date '+%C%y%m%d' -d "$end_date+9 days"`
 echo $new_date_value
+
+# compare date
+date1=$(date +%Y%m%d")
+date2=$(date -d 2025-03-13 +"%Y%m%d")
+if [ $date1 = $date2 ]
+# or if [ $date1 == $date2 ]
+then
+  echo "This is the same date"
+else 
+  echo "This is note the same date"
+fi
+# >
+if [ $date1 -gt $date2 ]
+then
+  echo "Date1 is greater than Date2"
+else 
+  echo "Date1 is not greater than Date2"
+fi
+# <
+if [ $date1 -lt $date2 ]
+then
+  echo "Date1 is lower than Date2"
+else
+  echo "Date1 is not lower than Date2"
+fi
