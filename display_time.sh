@@ -89,3 +89,14 @@ done
 # convert int in date 
 read -p "enter number second:" date_int
 date -d "@$date_int" +"%Y-%m-%d"
+
+# determine if the day is in weekend
+read -p "enter a date" date_var
+day_date=$(date -d "$date_var" +%u)
+# check if the day is a weekend 
+if [ "$day_date" -eq 6 ] || [ "$day_date" -eq 7 ]; then 
+# if [[ $(date -d "$day_date" +%u) -gt 5 ]]; then 
+  echo "the date is a weekend."
+else
+  echo "the date is not a weekend."
+fi 
