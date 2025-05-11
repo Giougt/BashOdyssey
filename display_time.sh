@@ -74,3 +74,18 @@ then
 else
   echo "Date1 is not lower than Date2"
 fi
+
+# loop for generate date between start and end
+start="2025-12-11"
+end="2025-12-15"
+start=$(date -d "$start" +%Y%m%d)
+end=$(date -d "$end" +%Y%m%d)
+while [[ $start -le $end ]]
+do  
+  echo $start
+  start=$(date -d"$start + 1 day" +"%Y%m%d")
+done
+
+# convert int in date 
+read -p "enter number second:" date_int
+date -d "@$date_int" +"%Y-%m-%d"
